@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Losowanie</title>
+   <style>
+     html {
+	    font-family: arial;
+     }
+     .buttonone {
+	  display: block;
+	  margin:0 auto;
+	  background-color: #fff;
+	  border: 3px solid black;
+	  padding: 10px 20px;
+	  font-size: 20px;
+	  
+	  transition: .3s;
+	  }
+	  
+	  .buttonone:hover {
+	     background-color: #000;
+		 color: white;
+	  }
+	  .buttontwo {
+	  display: block;
+	  margin:0 auto;
+	  background-color: #f2f2f2;
+	  border: 3px solid black;
+	  padding: 10px 20px;
+	  font-size: 20px;
+	  
+	  transition: .3s;
+	  }
+	  
+	  .buttontwo:hover {
+	     background-color: #555555;
+		 color: white;
+	  }
+	  
+	  .div {
+	     float: left;
+		 width: 60px;
+		 height: 60px;
+		 border-radius: 50%;
+		 background-color: cornflowerblue;
+		 margin: 10px;
+		 line-height: 60px;
+		 text-align: center;
+		 font-weight: bold;
+		 color: white;
+	}
+	.kolo {
+	     float: left;
+		 width: 60px;
+		 height: 60px;
+		 border-radius: 50%;
+		 background-color: red;
+		 margin: 10px;
+		 line-height: 60px;
+		 text-align: center;
+		 font-weight: bold;
+		 color: white;
+   </style>
+</head>
+
+<body>
+   <button class="buttonone">Losuj</button>
+   <button class="buttontwo">Star</button>
+   <!--<div>23</div>-->
+   <script>
+   const resultOne = [];
+   const resultTwo = [];
+   
+   const losowanieone = function() {
+   
+   if(resultOne.length === 7) return;
+   
+   
+   //tworzymy element div
+      const div = document.createElement("div");
+	div.setAttribute("class", "div");
+	  const wynikLosowania = Math.floor(Math.random() * 49 + 1);;
+	  
+	  for (let i = 0; i < resultOne.length; i++){
+	     if(wynikLosowania === resultOne[i] ){
+		 console.log("ta sama liczba");
+		 return losowanieone();
+		 }
+	  }
+	  div.textContent = wynikLosowania;
+	  
+	  document.body.appendChild(div);
+
+	  //dodajemy do tablicy wyników
+	  resultOne.push(wynikLosowania);
+   }
+   
+   const losowanietwo = function() {
+   
+   if(resultTwo.length === 2) return;
+   
+   
+   //tworzymy element div
+      const div = document.createElement("div")
+	     div.setAttribute("class", "kolo");
+	  const wynikLosowania = Math.floor(Math.random() * 11 + 1);
+	  
+	  for (let i = 0; i < resultTwo.length; i++){
+	     if(wynikLosowania === resultTwo[i] ){
+		 console.log("ta sama liczba");
+		 return losowanietwo();
+		 }
+	  }
+	  div.textContent = wynikLosowania;
+	  
+	  document.body.appendChild(div);
+
+	  //dodajemy do tablicy wyników
+	  resultTwo.push(wynikLosowania);
+   }
+   
+   //Pobranie elementu na ktorym pracujemy
+   const buttonone =  document.querySelector(".buttonone")
+   const buttontwo =  document.querySelector(".buttontwo")
+   //nasluchiwanie na zdarzenie w tym wypadku klika
+   buttonone.addEventListener("click", losowanieone)
+   buttontwo.addEventListener("click", losowanietwo)
+   </script>
+</body>
+
+</html>
