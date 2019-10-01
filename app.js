@@ -1,57 +1,57 @@
-const resultOne = [];
+   const resultOne = [];
    const resultTwo = [];
    
-   const losowanieone = function() {
+   const drawOne = function() {
    
    if(resultOne.length === 7) return;
    
    
-   //tworzymy element div
+   //create element div
       const div = document.createElement("div");
 	div.setAttribute("class", "div");
-	  const wynikLosowania = Math.floor(Math.random() * 49 + 1);;
+	  const scoreDraw = Math.floor(Math.random() * 49 + 1);;
 	  
 	  for (let i = 0; i < resultOne.length; i++){
-	     if(wynikLosowania === resultOne[i] ){
-		 console.log("ta sama liczba");
-		 return losowanieone();
+	     if(scoreDraw === resultOne[i] ){
+		 console.log("same number");
+		 return drawOne();
 		 }
 	  }
-	  div.textContent = wynikLosowania;
+	  div.textContent = scoreDraw;
 	  
 	  document.body.appendChild(div);
 
-	  //dodajemy do tablicy wyników
-	  resultOne.push(wynikLosowania);
+	  //add score to a array
+	  resultOne.push(scoreDraw);
    }
    
-   const losowanietwo = function() {
+   const drawTwo = function() {
    
    if(resultTwo.length === 2) return;
    
    
-   //tworzymy element div
+   //create element div
       const div = document.createElement("div")
-	     div.setAttribute("class", "kolo");
-	  const wynikLosowania = Math.floor(Math.random() * 11 + 1);
+	     div.setAttribute("class", "circle");
+	  const scoreDraw = Math.floor(Math.random() * 11 + 1);
 	  
 	  for (let i = 0; i < resultTwo.length; i++){
-	     if(wynikLosowania === resultTwo[i] ){
-		 console.log("ta sama liczba");
-		 return losowanietwo();
+	     if(scoreDraw === resultTwo[i] ){
+		 console.log("same number");
+		 return drawTwo();
 		 }
 	  }
-	  div.textContent = wynikLosowania;
+	  div.textContent = scoreDraw;
 	  
 	  document.body.appendChild(div);
 
-	  //dodajemy do tablicy wyników
-	  resultTwo.push(wynikLosowania);
+	  //add to array
+	  resultTwo.push(scoreDraw);
    }
    
-   //Pobranie elementu na ktorym pracujemy
+   //download buttons
    const buttonone =  document.querySelector(".buttonone")
    const buttontwo =  document.querySelector(".buttontwo")
    //nasluchiwanie na zdarzenie w tym wypadku klika
-   buttonone.addEventListener("click", losowanieone)
-   buttontwo.addEventListener("click", losowanietwo)
+   buttonone.addEventListener("click", drawOne)
+   buttontwo.addEventListener("click", drawTwo)
