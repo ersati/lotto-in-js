@@ -1,75 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <title>Losowanie</title>
-   <style>
-     html {
-	    font-family: arial;
-     }
-     .buttonone {
-	  display: block;
-	  margin:0 auto;
-	  background-color: #fff;
-	  border: 3px solid black;
-	  padding: 10px 20px;
-	  font-size: 20px;
-	  
-	  transition: .3s;
-	  }
-	  
-	  .buttonone:hover {
-	     background-color: #000;
-		 color: white;
-	  }
-	  .buttontwo {
-	  display: block;
-	  margin:0 auto;
-	  background-color: #f2f2f2;
-	  border: 3px solid black;
-	  padding: 10px 20px;
-	  font-size: 20px;
-	  
-	  transition: .3s;
-	  }
-	  
-	  .buttontwo:hover {
-	     background-color: #555555;
-		 color: white;
-	  }
-	  
-	  .div {
-	     float: left;
-		 width: 60px;
-		 height: 60px;
-		 border-radius: 50%;
-		 background-color: cornflowerblue;
-		 margin: 10px;
-		 line-height: 60px;
-		 text-align: center;
-		 font-weight: bold;
-		 color: white;
-	}
-	.kolo {
-	     float: left;
-		 width: 60px;
-		 height: 60px;
-		 border-radius: 50%;
-		 background-color: red;
-		 margin: 10px;
-		 line-height: 60px;
-		 text-align: center;
-		 font-weight: bold;
-		 color: white;
-   </style>
-</head>
-
-<body>
-   <button class="buttonone">Losuj</button>
-   <button class="buttontwo">Star</button>
-   <!--<div>23</div>-->
-   <script>
-   const resultOne = [];
+const resultOne = [];
    const resultTwo = [];
    
    const losowanieone = function() {
@@ -126,7 +55,3 @@
    //nasluchiwanie na zdarzenie w tym wypadku klika
    buttonone.addEventListener("click", losowanieone)
    buttontwo.addEventListener("click", losowanietwo)
-   </script>
-</body>
-
-</html>
