@@ -1,6 +1,10 @@
 const resultOne = [];
 const resultTwo = [];
+const buttonone = document.querySelector(".buttonone");
+const buttontwo = document.querySelector(".buttontwo");
+const buttontree = document.querySelector(".buttontree");
 const section = document.querySelector(".numbers");
+
 const drawOne = function() {
   if (resultOne.length === 7) return;
 
@@ -24,30 +28,44 @@ const drawOne = function() {
 };
 
 const drawTwo = function() {
-  if (resultTwo.length === 2) return;
+  if (resultOne.length <= 6) {
+    return;
+  } else {
+    if (resultTwo.length === 2) return;
 
-  //create element div
-  const div = document.createElement("div");
-  div.setAttribute("class", "circle");
-  const scoreDraw = Math.floor(Math.random() * 11 + 1);
+    //create element div
+    const div = document.createElement("div");
+    div.setAttribute("class", "circle");
+    const scoreDraw = Math.floor(Math.random() * 11 + 1);
 
-  for (let i = 0; i < resultTwo.length; i++) {
-    if (scoreDraw === resultTwo[i]) {
-      console.log("same number");
-      return drawTwo();
+    for (let i = 0; i < resultTwo.length; i++) {
+      if (scoreDraw === resultTwo[i]) {
+        console.log("same number");
+        return drawTwo();
+      }
     }
+    div.textContent = scoreDraw;
+
+    section.appendChild(div);
+
+    //add to array
+    resultTwo.push(scoreDraw);
   }
-  div.textContent = scoreDraw;
+};
 
-  section.appendChild(div);
-
-  //add to array
-  resultTwo.push(scoreDraw);
+const auto = function() {
+  for (let i = 0; i < 7; i++) {
+    drawOne();
+  }
+  for (let i = 0; i < 2; i++) {
+    drawTwo();
+  }
+  return;
 };
 
 //download buttons
-const buttonone = document.querySelector(".buttonone");
-const buttontwo = document.querySelector(".buttontwo");
-//nasluchiwanie na zdarzenie w tym wypadku klika
+
+//listen for event on click
 buttonone.addEventListener("click", drawOne);
 buttontwo.addEventListener("click", drawTwo);
+buttontree.addEventListener("click", auto);

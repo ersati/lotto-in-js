@@ -1,16 +1,41 @@
-html {
+* {
   font-family: arial;
+  margin: 0;
+  padding: 0;
+
+}
+
+header.background {
+  background-image: url(img/lotto.jpg.jpg);
+  height: 100vh;
+  width: 100%;
 }
 
 .main {
-  margin-top: 20vh;
+  padding-top: 20vh;
 }
+
 .numbers {
   margin: 5vh;
 }
-.buttonone {
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2.text {
+  background-color: rgba(0, 0, 0, .5);
+  height: 10vh;
+  color: white;
+}
+
+.buttonone,
+.buttontwo,
+.buttontree {
   display: block;
-  margin: 10px auto;
+  margin: 5px auto;
   background-color: #fff;
   border: 3px solid black;
   padding: 10px 20px;
@@ -22,19 +47,14 @@ html {
   background-color: blue;
   color: white;
 }
-.buttontwo {
-  display: block;
-  margin: 0 auto;
-  background-color: #f2f2f2;
-  border: 3px solid black;
-  padding: 10px 20px;
-  font-size: 20px;
-
-  transition: 0.3s;
-}
 
 .buttontwo:hover {
   background-color: red;
+  color: white;
+}
+
+.buttontree:hover {
+  background-color: green;
   color: white;
 }
 
@@ -50,6 +70,7 @@ html {
   font-weight: bold;
   color: white;
 }
+
 .circle {
   float: left;
   width: 60px;
